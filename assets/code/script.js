@@ -10,7 +10,7 @@ const terminal = document.getElementById('terminal');
       links: `pronouns → <a href='https://en.pronouns.page/@layered' target='_blank'>en.pronouns.page/@layered</a>\nbluesky → <a href='https://bsky.app/profile/auri.lol' target='_blank'>bsky.app/profile/auri.lol</a>`,
       contact: `email me at <a href='mailto:me@auri.lol'>me@auri.lol</a>`,
       keys: `click to <a href='keys.txt' target='_blank'>view my publickeys</a>`,
-      pronouns: `click to <a href='/image/pronounspage.png' target='_blank'>view my pronouns page</a>`,
+      pronouns: `click to <a href='/assets/image/pronounspage.png' target='_blank'>view my pronouns page</a>`,
       writings: `click to <a href='https://writings.auri.lol' target='_blank'>view my writings</a>`
     };
 
