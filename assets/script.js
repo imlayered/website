@@ -159,3 +159,61 @@ const terminal = document.getElementById('terminal');
 console.log('auri.lol :3 // github.com/imlayered/website')
 
 // what in the spaghetti
+
+    function addRandomHearts() {
+      document.querySelectorAll('.random-heart').forEach(e => e.remove());
+      const heartImages = [
+        '/assets/random/heart.png',
+        '/assets/random/heart2.png',
+        '/assets/random/colonthree.png',
+        '/assets/random/aaa.png',
+        '/assets/random/cat.png',
+        '/assets/random/owo.png'
+
+      ];
+      const count = Math.floor(Math.random() * 41) + 10;
+      const container = document.getElementById('containTheWebsite');
+      const containerRect = container ? container.getBoundingClientRect() : null;
+      const maxTries = 20;
+      for (let i = 0; i < count; i++) {
+        let img, tries = 0, overlap = true;
+        let width = Math.random() * 60 + 40;
+        let height = width; 
+        let top, left;
+        while (overlap && tries < maxTries) {
+          top = Math.random() * (window.innerHeight - height);
+          left = Math.random() * (window.innerWidth - width);
+          overlap = false;
+          if (containerRect) {
+            const heartRect = {
+              top: top,
+              left: left,
+              right: left + width,
+              bottom: top + height
+            };
+            if (!(heartRect.right < containerRect.left ||
+                  heartRect.left > containerRect.right ||
+                  heartRect.bottom < containerRect.top ||
+                  heartRect.top > containerRect.bottom)) {
+              overlap = true;
+            }
+          }
+          tries++;
+        }
+        img = document.createElement('img');
+        img.src = heartImages[Math.floor(Math.random() * heartImages.length)];
+        img.className = 'random-heart';
+        img.alt = 'heart';
+        img.style.position = 'fixed';
+        img.style.zIndex = 1000;
+        img.style.pointerEvents = 'none';
+        img.style.width = width + 'px';
+        img.style.height = height + 'px';
+        img.style.top = top + 'px';
+        img.style.left = left + 'px';
+        img.style.transform = `rotate(${Math.random() * 360}deg)`;
+        document.body.appendChild(img);
+      }
+    }
+
+    addRandomHearts();
