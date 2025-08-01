@@ -15,7 +15,7 @@ const terminal = document.getElementById('terminal');
     };
 
     function showDefaultOutput() {
-      Cmd.innerText = `auri@jupiter:~$ ./me.sh`;
+      Cmd.innerText = `auri@jupiter:~$ cat readme.txt`;
       Output.innerHTML = '';
       const defaultLines = [
         '~ welcome to my corner of the internet',
