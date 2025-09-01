@@ -5,13 +5,12 @@ const terminal = document.getElementById('terminal');
     const container = document.getElementById('containTheWebsite');
 
     const commands = {
-      help: `available commands:\n- about\n- links\n- contact\n- writings\n- clear\n- keys\n- pronouns`,
+      help: `available commands:\n- about\n- links\n- contact\n- clear\n- keys\n- pronouns`,
       about: `hey, i'm auri; i code stuff and sometimes write`,
       links: `pronouns → <a href='https://en.pronouns.page/@layered' target='_blank'>en.pronouns.page/@layered</a>\nbluesky → <a href='https://bsky.app/profile/auri.lol' target='_blank'>bsky.app/profile/auri.lol</a>`,
       contact: `email me at <a href='mailto:me@auri.lol'>me@auri.lol</a>`,
       keys: `click to <a href='keys.txt' target='_blank'>view my publickeys</a>`,
       pronouns: `click to <a href='/assets/image/pronounspage.png' target='_blank'>view my pronouns page</a>`,
-      writings: `click to <a href='https://writings.auri.lol' target='_blank'>view my writings</a>`
     };
 
     function showDefaultOutput() {
@@ -115,7 +114,7 @@ const terminal = document.getElementById('terminal');
         Cmd.innerText = `auri@jupiter:~$ ${cmd}`;
         Output.innerHTML = '';
         const allCommands = [
-          'about', 'links', 'contact', 'writings', 'clear', 'keys', 'pronouns',
+          'about', 'links', 'contact', 'clear', 'keys', 'pronouns',
           'ls', 'ls -la', 'home', 'rm -rf /', 'sudo', 'cat /dev/random', 'sl', 'catsay', 'cowsay'
         ];
         allCommands.forEach((c, i) => {
